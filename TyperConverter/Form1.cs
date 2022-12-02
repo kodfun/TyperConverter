@@ -43,5 +43,11 @@
             txtOutput.AppendText($"Send {s}{Environment.NewLine}");
             txtOutput.AppendText($"Sleep {10}{Environment.NewLine}");
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\" + txtFileName.Text;
+            File.WriteAllText(path, txtOutput.Text);
+        }
     }
 }
